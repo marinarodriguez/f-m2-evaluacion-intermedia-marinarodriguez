@@ -6,8 +6,11 @@ const inputEl = document.querySelector('.number__input');
 const buttonEl = document.querySelector('.button');
 //Recoger la caja de pistas
 const hintEl = document.querySelector('.hint__text');
+//Recoger contador 
+const counterEl = document.querySelector('.counter');
 //Declarar número aleatorio
-let randomNumber = 0;
+let randomNumber = '';
+let clicks = 0;
 
 //Función generadora de número aleatorio
 function getRandomNumber() {
@@ -31,6 +34,10 @@ function handleButtonClick(event){
     else if (randomNumber = writtenNumber){
         hintEl.innerHTML = 'ACERTASTE';
     }
+
+    //Contador
+    clicks += 1;
+    counterEl.innerHTML = clicks;
 };
 
 //Añadir listener al botón
