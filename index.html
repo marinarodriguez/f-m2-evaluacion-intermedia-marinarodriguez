@@ -9,14 +9,17 @@
     <title>Guess game</title>
 </head>
 <body>
+    <div class="container">
     <h1>Adivina el número</h1>
-    <h2 class="counter">0</h2>
-    <form>
-        <label for="number">Introduce aquí tu número</label>
+    <div class="counter__container"><h2 class="counter">0</h2></div>
+    <form class="form">
+        <label for="number">Introduce aquí tu número (del 1 al 100)</label>
         <input class="number__input" type="number" id="number"> 
         <button class="button" type="submit">Prueba</button>
     </form>
     <div class="hint__container"><h2 class="hint__text">Escribe un número y dale a <i>Prueba</i></h2></div>
+    </div>
     <script type="text/javascript" src="main.js"></script>
+
 </body>
 </html>

@@ -25,19 +25,36 @@ function handleButtonClick(event){
     event.preventDefault();
     const writtenNumber = inputEl.value;
     console.log('El número escrito es ' + writtenNumber);
-    if (randomNumber > writtenNumber){
-        hintEl.innerHTML = 'Tu número es menor';
+    //Si no has escrito nada
+    if (!writtenNumber){
+        hintEl.innerHTML = 'No has escrito nada';
     }
+    //Si has escrito un número mayor que 100;
+    else if (writtenNumber > 100){
+        hintEl.innerHTML = 'El número escrito no debe ser mayor de 100';
+    }
+    //Si has escrito un número menor
+    else if (randomNumber > writtenNumber){
+        hintEl.innerHTML = 'Tu número es menor';
+        //Y contamos los clicks
+        clicks += 1;
+        counterEl.innerHTML = clicks;
+    }
+    //Si has escrito un número mayor
     else if (randomNumber < writtenNumber){
         hintEl.innerHTML = 'Tu número es mayor';
+        //Y contamos los clicks
+        clicks += 1;
+        counterEl.innerHTML = clicks;
     }
+    //Si has escrito el número CORRECTO
     else if (randomNumber = writtenNumber){
-        hintEl.innerHTML = 'ACERTASTE';
+        hintEl.innerHTML = '¡ACERTASTE';
+        //Y contamos los clicks
+        clicks += 1;
+        counterEl.innerHTML = clicks;
     }
 
-    //Contador
-    clicks += 1;
-    counterEl.innerHTML = clicks;
 };
 
 //Añadir listener al botón

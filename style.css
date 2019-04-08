@@ -1,19 +1,48 @@
 body {
     box-sizing: border-box;
-    background-color: rgb(180, 180, 180);
+    background-color: rgb(223, 223, 223);
+    font-family: Helvetica, sans-serif;
  }
-
- .counter {
+.container {
+    max-width: 700px;
+}
+.counter__container {
+    background-color: white;
+    border: 2px red dotted;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.counter {
      color: red;
+     text-align: center;
+     margin: 10px;
  }
+.number__input {
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .hint__container {
-    border: 1px solid blue;
+    border: 1px solid rgb(128, 128, 245);
+    border-radius: 20px;
     height: 40px;
     margin-top: 40px;
+    background-color: rgb(184, 227, 255);
 }
-
+.form {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    border: 1px solid rgb(128, 128, 245);
+    border-radius: 20px;
+    background-color: rgb(184, 227, 255);
+}
 .hint__text {
     color: blue;
     font-size: 14px;
+    text-align: center;
+}
+h1 {
     text-align: center;
 }
