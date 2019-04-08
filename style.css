@@ -1,4 +1,19 @@
 body {
     box-sizing: border-box;
-    background-color: grey;
+    background-color: rgb(180, 180, 180);
  }
+
+ .counter {
+     color: red;
+ }
+.hint__container {
+    border: 1px solid blue;
+    height: 40px;
+    margin-top: 40px;
+}
+
+.hint__text {
+    color: blue;
+    font-size: 14px;
+    text-align: center;
+}
