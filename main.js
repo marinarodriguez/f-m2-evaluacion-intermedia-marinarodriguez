@@ -49,7 +49,7 @@ function handleButtonClick(event){
     }
     //Si has escrito el número CORRECTO
     else if (randomNumber = writtenNumber){
-        hintEl.innerHTML = '¡ACERTASTE';
+        hintEl.innerHTML = '¡ACERTASTE!';
         //Y contamos los clicks
         clicks += 1;
         counterEl.innerHTML = clicks;
