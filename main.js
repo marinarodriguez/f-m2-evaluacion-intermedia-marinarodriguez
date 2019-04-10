@@ -18,35 +18,49 @@ function getRandomNumber(max) {
 const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
 
+const counterClick = () => {
+    clicks += 1;
+    counterEl.innerHTML = clicks;
+}
+const printHint = (message) => {
+    return hintEl.innerHTML = message;
+}
 //Función de mostrar contenido del input
 function handleButtonClick(event){
     event.preventDefault();
+
     const writtenNumberString = inputEl.value;
     const writtenNumber = parseInt(writtenNumberString);
+
     console.log('El número escrito es ' + writtenNumber);
-    //Si no has escrito nada
-    if (!writtenNumber){
-        hintEl.innerHTML = 'No has escrito nada';
+
+    const feedBackLogic = () => {
+        if (!writtenNumber){
+            printHint('No has escrito nada');
+        }
+        //Si has escrito un número mayor que 100;
+        else if (writtenNumber > 100 || writtenNumber < 0 ){
+            printHint('El número escrito debe ser mayor que 0 y menor que 100');
+        }
+        //Si has escrito un número menor
+        else if (randomNumber > writtenNumber){
+            printHint('Tu número es menor');
+        }
+        //Si has escrito un número mayor
+        else if (randomNumber < writtenNumber){
+            printHint('Tu número es mayor');
+        }
+        //Si has escrito el número CORRECTO
+        else if (randomNumber === writtenNumber){
+            printHint('¡ACERTASTE!');
+        }
     }
-    //Si has escrito un número mayor que 100;
-    else if (writtenNumber > 100){
-        hintEl.innerHTML = 'El número escrito no debe ser mayor de 100';
-    }
-    //Si has escrito un número menor
-    else if (randomNumber > writtenNumber){
-        hintEl.innerHTML = 'Tu número es menor';
-    }
-    //Si has escrito un número mayor
-    else if (randomNumber < writtenNumber){
-        hintEl.innerHTML = 'Tu número es mayor';
-    }
-    //Si has escrito el número CORRECTO
-    else if (randomNumber === writtenNumber){
-        hintEl.innerHTML = '¡ACERTASTE';
-    }
-    clicks += 1;
-    counterEl.innerHTML = clicks;
-};
+
+    feedBackLogic();
+    counterClick();
+}
+
+
 
 //Añadir listener al botón
 buttonEl.addEventListener('click', handleButtonClick);
