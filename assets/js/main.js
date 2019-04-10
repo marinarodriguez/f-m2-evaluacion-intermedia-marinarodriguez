@@ -18,7 +18,7 @@ function getRandomNumber(max) {
      return Math.ceil(Math.random() * max);
 }
   
-const randomNumber = getRandomNumber(100);
+let randomNumber = getRandomNumber(100);
 
 console.log(randomNumber);
 
@@ -72,6 +72,9 @@ function handleResetButtonClick(event){
     printHint('Escribe un número y dale a Prueba');
     counterClickReset();
     inputEl.value = '';
+    randomNumber = getRandomNumber(100);
+    console.log(randomNumber);
+
 }
 
 buttonEl.addEventListener('click', handleButtonClick);
