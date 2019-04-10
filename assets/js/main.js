@@ -13,7 +13,6 @@ const resetButtonEl = document.querySelector('.reset__button');
 
 let clicks = 0;
 
-//Función generadora de número aleatorio
 function getRandomNumber(max) {
      return Math.ceil(Math.random() * max);
 }
