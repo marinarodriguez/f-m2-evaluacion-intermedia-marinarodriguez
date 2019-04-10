@@ -2,7 +2,7 @@ body {
     box-sizing: border-box;
     background-color: rgb(223, 223, 223);
     font-family: Helvetica, sans-serif;
- }
+}
 .container {
     max-width: 700px;
 }
@@ -12,12 +12,13 @@ body {
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    margin: 20px;
 }
 .counter {
      color: red;
      text-align: center;
      margin: 10px;
- }
+}
 .number__input {
     margin-left: 20px;
     margin-right: 20px;
@@ -33,7 +34,10 @@ body {
     display: flex;
     justify-content: center;
 }
-.button {
+.reset__button {
+    margin-left: 20px;
+}
+.btn {
     border: 1px solid rgb(128, 128, 245);
     border-radius: 20px;
     background-color: rgb(184, 227, 255);
