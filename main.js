@@ -9,21 +9,20 @@ const hintEl = document.querySelector('.hint__text');
 //Recoger contador 
 const counterEl = document.querySelector('.counter');
 //Declarar número aleatorio
-let randomNumber = '';
 let clicks = 0;
 
 //Función generadora de número aleatorio
-function getRandomNumber() {
-     randomNumber = Math.ceil(Math.random() * 100);
-     return 'El número generado es ' + randomNumber;
+function getRandomNumber(max) {
+     return Math.ceil(Math.random() * max);
   }
-
-console.log(getRandomNumber());
+const randomNumber = getRandomNumber(100);
+console.log(randomNumber);
 
 //Función de mostrar contenido del input
 function handleButtonClick(event){
     event.preventDefault();
-    const writtenNumber = inputEl.value;
+    const writtenNumberString = inputEl.value;
+    const writtenNumber = parseInt(writtenNumberString);
     console.log('El número escrito es ' + writtenNumber);
     //Si no has escrito nada
     if (!writtenNumber){
@@ -36,25 +35,17 @@ function handleButtonClick(event){
     //Si has escrito un número menor
     else if (randomNumber > writtenNumber){
         hintEl.innerHTML = 'Tu número es menor';
-        //Y contamos los clicks
-        clicks += 1;
-        counterEl.innerHTML = clicks;
     }
     //Si has escrito un número mayor
     else if (randomNumber < writtenNumber){
         hintEl.innerHTML = 'Tu número es mayor';
-        //Y contamos los clicks
-        clicks += 1;
-        counterEl.innerHTML = clicks;
     }
     //Si has escrito el número CORRECTO
-    else if (randomNumber = writtenNumber){
-        hintEl.innerHTML = '¡ACERTASTE!';
-        //Y contamos los clicks
-        clicks += 1;
-        counterEl.innerHTML = clicks;
+    else if (randomNumber === writtenNumber){
+        hintEl.innerHTML = '¡ACERTASTE';
     }
-
+    clicks += 1;
+    counterEl.innerHTML = clicks;
 };
 
 //Añadir listener al botón
